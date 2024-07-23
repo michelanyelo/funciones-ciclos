@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Factorial</title>
+</head>
+<body>
+  
+  <script>
+// Multiplicación
+
+function multiplo() {
+      let num1 = Number(prompt("Ingrese número 1"))
+      let num2 = Number(prompt("Ingrese número 2"))
+
+      let resultado = num1 * num2
+      if ( resultado <= 20 ) {
+        document.write(`El resultado de la multiplicación es: ${resultado}`)
+        
+      } else {
+        document.write("Número fuera del rango")
+    }
+}
+const numeroIngresado = function (n) {
+let tablaMultiplicar = 1;
+let lista =''
+      for (let i = 1; i <= n; i++) {
+        const resultado = numeroIngresado * i;
+        lista += `${numeroIngresado} x ${i} = ${resultado}<br>`;
+  }
+    return lista;
+}
+
+multiplo()
+
+//factorial
+    const factorial = function(n) {
+      let factorialNum = 1;
+      for(let i = 1; i <= n; i++) {
+        factorialNum = i * factorialNum;
+        console.log(factorialNum)
+      }
+
+      return factorialNum;
+    }
+
+    const listadoFactoriales = function(n) {
+      let lista = ''
+      for (let i = 1; i <= n; i++) {
+        lista += `<br>factorial de ${i} es: ${factorial(i)}`
+      }
+
+      return lista
+    }
+
+    document.write(listadoFactoriales(20))
+  </script>
+</body>
+</html>
