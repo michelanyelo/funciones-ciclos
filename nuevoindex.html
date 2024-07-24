@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial</title>
+</head>
+
+<body>
+
+    <script>
+
+        // Inicio de todo
+        solicitaNum()
+
+        // funcion para solicitar numero por pantalla
+        function solicitaNum() {
+            let num = Number(prompt("Ingrese número 1"))
+            // creo una variable respuesta que tomará el valor de lo que retorne la función validar: 
+            // puede ser true o false
+            let respuesta = validaNum(num)
+            // si retorna true, continua con el calculo de multiplo y factorial
+            if (respuesta == true) {
+                multiplo(num)
+                factorial(num)
+                // si retorna false, despliego un error por pantalla
+            } else {
+                alert("Error: numero inferior a 1 o mayor a 20")
+            }
+        }
+
+        // validacion del numero ingresado por pantalla
+        function validaNum(numeroIngresado) {
+            if (numeroIngresado >= 1 && numeroIngresado <= 20) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        // multiplicacion
+        function multiplo(numeroIngresado) {
+            let lista = ''
+            for (let i = 1; i <= numeroIngresado; i++) {
+                const resultado = i * numeroIngresado;
+
+                // resultado en html
+                // la salida diría por ejemplo:   1 x 5 = 10 (donde 1 avanza 1 en 1 hasta llegar a 5, 
+                // y 5 es el numero ingresado por teclado)
+                document.write(`${i} x ${numeroIngresado} = ${i * numeroIngresado} <br>`);
+
+                // resultado guardado en un string lista, aún no se muestra en html
+                lista += `${numeroIngresado} x ${i} = ${resultado} <br>`;
+                console.log(lista)
+            }
+        }
+
+        //factorial
+        function factorial(numeroIngresado) {
+            let factorialNum = 1;
+            for (let i = 1; i <= numeroIngresado; i++) {
+                factorialNum *= i;
+                document.write(`Factorial de ${i}: ${factorialNum} <br>`)
+                console.log(factorialNum)
+            }
+        }
+
+    </script>
+</body>
+
+</html>
